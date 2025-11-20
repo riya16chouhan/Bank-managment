@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Riya chouhan ",
+        "email": "riya.16chouhan@gmail.com",
+        "phone no.": 7974748071,
+        "pin": 1234,
+        "Account no.": "0MR48CC9E",
+        "Balance": 0
+    },
+    {
+        "name": "Harshita Nagwanshi ",
+        "email": "harshita.123@gmail.com",
+        "phone no.": 1234567890,
+        "pin": 2345,
+        "Account no.": "15FCPE0W7",
+        "Balance": 0
+    },
+    {
+        "name": "Vishal Vishnu",
+        "email": "vishal@gmail.com",
+        "phone no.": 2345678901,
+        "pin": 4567,
+        "Account no.": "G0Y88FQ1J",
+        "Balance": 1000
+    },
+    {
+        "name": "Jayesh Choubey",
+        "email": "jay@gmail.com",
+        "phone No.": 1112223334,
+        "pin": 1234,
+        "Account No.": "B28ZO68MZ",
+        "balance": 0
+    }
+]
