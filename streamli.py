@@ -11,10 +11,49 @@ st.title("🏦 MyBank - Simple Banking System")
 DATABASE = "database.json"
 
 # ===================== DATA HANDLING =====================
+def _normalize_user(u):
+    name = u.get("name") or u.get("Name") or ""
+    email = u.get("email") or u.get("Email") or ""
+    phone = u.get("phone No.") or u.get("phone no.") or u.get("phone") or ""
+    try:
+        phone = int(phone)
+    except Exception:
+        pass
+    pin = u.get("pin") or u.get("Pin") or ""
+    try:
+        pin = int(pin)
+    except Exception:
+        pass
+    acc = u.get("Account No.") or u.get("Account no.") or u.get("Account no") or u.get("Account No") or ""
+    bal = u.get("balance") if "balance" in u else u.get("Balance", 0)
+    try:
+        bal = int(bal)
+    except Exception:
+        try:
+            bal = float(bal)
+        except Exception:
+            bal = 0
+
+    return {
+        "name": name,
+        "email": email,
+        "phone No.": phone,
+        "pin": pin,
+        "Account No.": acc,
+        "balance": bal
+    }
+
+
 def load_data():
     if Path(DATABASE).exists():
         with open(DATABASE, 'r') as f:
-            return json.load(f)
+            raw = json.load(f)
+        normalized = [_normalize_user(u) for u in raw]
+        # Persist normalized data if structure changed
+        if normalized != raw:
+            with open(DATABASE, 'w') as f:
+                json.dump(normalized, f, indent=4)
+        return normalized
     return []
 
 def save_data(data):
