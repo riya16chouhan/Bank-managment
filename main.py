@@ -5,7 +5,7 @@ import string
 
 
 class Bank:
-    database='datbase.json'
+    database='database.json'
     data=[]
 
     try: 
@@ -137,7 +137,7 @@ class Bank:
                     else:
                         user_data[0][i]=new_data[i]
             print(user_data)  
-            Bank.__update  
+            Bank.__update()  
             print("Details updated!")
 
     def delete_account(self):
