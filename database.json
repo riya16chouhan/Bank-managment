@@ -46,5 +46,13 @@
         "pin": 2222,
         "Account No.": "18EA2M3RR",
         "balance": 0
+    },
+    {
+        "name": "Rajat",
+        "email": "r@gmail.com",
+        "phone No.": 1234567890,
+        "pin": 2222,
+        "Account No.": "6RNSY5V35",
+        "balance": 1
     }
 ]
