@@ -78,5 +78,13 @@
         "pin": 1212,
         "Account No.": "O1R9L8O8J",
         "balance": 1000
+    },
+    {
+        "name": "rajat",
+        "email": "rajat@123",
+        "phone No.": 1234556781,
+        "pin": 1234,
+        "Account No.": "49ZVB27BY",
+        "balance": 123
     }
 ]
