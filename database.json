@@ -54,5 +54,29 @@
         "pin": 2222,
         "Account No.": "6RNSY5V35",
         "balance": 1
+    },
+    {
+        "name": "raj",
+        "email": "raj.123@gmail.com",
+        "phone No.": 8889955755,
+        "pin": 3333,
+        "Account No.": "BH6LG1X13",
+        "balance": 0
+    },
+    {
+        "name": "vihan",
+        "email": "vihan123@gmail.com",
+        "phone No.": 1234578960,
+        "pin": 1212,
+        "Account No.": "VK5D29PY1",
+        "balance": 0
+    },
+    {
+        "name": "vihan",
+        "email": "vihan123@gmail.com",
+        "phone No.": 1234578960,
+        "pin": 1212,
+        "Account No.": "O1R9L8O8J",
+        "balance": 1000
     }
 ]
