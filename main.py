@@ -35,10 +35,10 @@ class Bank:
         d={
             "name":input("Please enter your name: "),
             "email":input("Please enter your email: "),
-            "phone no.":int(input("Enter your phone number: ")),
+            "phone No.":int(input("Enter your phone number: ")),
             "pin":int(input("Enter your pin: ")),
-            "Account no.":Bank.__accountno(),
-            "Balance": 0
+            "Account No.":Bank.__accountno(),
+            "balance": 0
                             
         }
         print(f"Please remember your account number: {d['Account no.']}")
@@ -54,10 +54,10 @@ class Bank:
             Bank.__update()
 
 
-    def deposite_money(self):
+    def deposit_money(self):
         accNo = input("Enter your account no.: ")
         pin = int(input("Enter your pin: "))
-        user_data = [i for i in Bank.data if i['Account no.'] == accNo and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i['Account No.'] == accNo and i['pin'] == pin]
         print(user_data)
         if not user_data:
             print("user not found")
@@ -68,14 +68,14 @@ class Bank:
             elif amount > 10000:
                 print("Greater than 10000")
             else:
-                user_data[0]['Balance'] += amount
+                user_data[0]['balance'] += amount
                 Bank.__update()
                 print("Amount credited")
 
     def withdraw_money(self):
         accNo = input("Enter your account no.: ")
         pin = int(input("Enter your pin: "))
-        user_data = [i for i in Bank.data if i['Account no.'] == accNo and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i['Account No.'] == accNo and i['pin'] == pin]
         print(user_data)
         if not user_data:
             print("user not found")
@@ -86,14 +86,14 @@ class Bank:
             elif amount > 10000:
                 print("Greater than 10000")
             else:
-                user_data[0]['Balance']-=amount
+                user_data[0]['balance']-=amount
                 Bank.__update()
                 print("Amount Debited")
 
     def details(self):
         accNo = input("Enter your account no.: ")
         pin = int(input("Enter your pin: "))
-        user_data = [i for i in Bank.data if i['Account no.'] == accNo and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i['Account No.'] == accNo and i['pin'] == pin]
         if not user_data:
             print("User not found!")
         else:
@@ -103,7 +103,7 @@ class Bank:
     def update_details(self):
         accNo = input("Enter your account no.: ")
         pin = int(input("Enter your pin: "))
-        user_data = [i for i in Bank.data if i['Account no.'] == accNo and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i['Account No.'] == accNo and i['pin'] == pin]
         if not user_data:
             print("User not found!")
         else:
@@ -112,12 +112,12 @@ class Bank:
             new_data={
                 'name':input("Enter your new name: "),
                 'email':input("Enter your new email:"),
-                'phone no.':(input("Enter your new phone no.:")),
+                'phone No.':(input("Enter your new phone no.:")),
                 'pin':(input("Enter your new pin:"))
             }
 
-            new_data["Account no."]=user_data[0]["Account no."]
-            new_data["Balance"]=user_data[0]["Balance"]
+            new_data["Account No."]=user_data[0]["Account No."]
+            new_data["balance"]=user_data[0]["balance"]
             #Handle the skipped values:
 
             for i in new_data:
@@ -143,13 +143,13 @@ class Bank:
     def delete_account(self):
         accNo = input("Enter your account no.: ")
         pin = int(input("Enter your pin: "))
-        user_data = [i for i in Bank.data if i['Account no.'] == accNo and i['pin'] == pin]
+        user_data = [i for i in Bank.data if i['Account No.'] == accNo and i['pin'] == pin]
         print(user_data)
         if not user_data:
             print("user not found")
         else:
             for i in Bank.data:
-                if i['Account no.']==accNo and i['pin']==pin:
+                if i['Account No.']==accNo and i['pin']==pin:
                     Bank.data.remove(i)
             Bank.__update()     
             print("data deleted")
@@ -159,19 +159,19 @@ class Bank:
             
 user=Bank()
 print("Press 1 for creating an account.")
-print("Press 2 to deposite money.")
+print("Press 2 to deposit money.")
 print("Press 3 to withdraw money.")
 print("Press 4 for account details.")
 print("Press 5 for updating the details.")
 print("Press 6 to deactivate your account.")
 
-check=int(input("Enter your coice: "))
+check=int(input("Enter your choice: "))
 
 if check==1:
     user.create_account()
 
 if check==2:
-    user.deposite_money()
+    user.deposit_money()
 
 if check==3:
     user.withdraw_money()
